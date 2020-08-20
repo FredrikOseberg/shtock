@@ -1,0 +1,23 @@
+.container {
+  padding: 8px;
+  color: #fff;
+  margin: 0 2.5rem;
+}
+
+.header {
+  font-size: 0.85rem;
+}
+
+.dividendList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.listItem {
+  display: flex;
+  margin: 10px 0;
+  position: relative;
+  width: 200px;
+  justify-content: space-between;
+}

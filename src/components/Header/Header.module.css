@@ -1,0 +1,44 @@
+.header {
+  padding: 10px;
+  background: var(--header-gradient-top);
+  display: flex;
+  justify-content: space-around;
+  color: #fff;
+}
+
+.container {
+  max-width: var(--site-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 35px;
+  height: 35px;
+  fill: #fff;
+  margin-right: 8px;
+}
+
+.userContainer {
+  display: flex;
+  align-items: center;
+}
+
+.user {
+  width: 32.5px;
+  height: 32.5px;
+  border-radius: 50%;
+  margin-right: 8px;
+  color: var(--header-gradient-top);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}

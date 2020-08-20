@@ -1,0 +1,20 @@
+.infoCard {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  color: var(--infoCard-text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 95px;
+  margin: 0 8px;
+}
+
+.darkmode {
+  background-color: var(--infoCard-dark-bg-color);
+  color: #fff;
+}
+
+.header {
+  font-size: 0.9rem;
+}

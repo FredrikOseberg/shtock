@@ -1,0 +1,15 @@
+.subheader {
+  background: linear-gradient(
+    to bottom,
+    var(--header-gradient-top),
+    var(--header-gradient-bottom)
+  );
+}
+
+.container {
+  max-width: var(--site-width);
+  margin: 0 auto;
+  padding: 40px 10px;
+  display: flex;
+  justify-content: space-between;
+}
