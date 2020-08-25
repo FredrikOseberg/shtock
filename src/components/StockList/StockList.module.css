@@ -1,0 +1,95 @@
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: var(--box-border-radius);
+}
+
+.header {
+  padding: 10px 0;
+  border-bottom: 2px solid #f1f1f1;
+  margin-bottom: 15px;
+  color: #1d1d1d;
+  display: flex;
+  justify-content: space-between;
+}
+
+.heading {
+  font-size: var(--h1-font-size);
+  font-weight: normal;
+}
+
+.listHeaders,
+.stockList {
+  transform: translateX(40px);
+}
+
+.listHeaders,
+.listItem {
+  display: flex;
+}
+
+.listItem {
+  color: #585858;
+  margin: 16px 0;
+  position: relative;
+}
+
+.stockList {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.listContainer {
+  padding: 20px;
+}
+
+.listItemName,
+.nameHeader {
+  width: 150px;
+}
+
+.listItemTicker,
+.tickerHeader,
+.listItemBid,
+.bidHeader,
+.listItemAsk,
+.askHeader {
+  width: 100px;
+}
+
+.dpspentHeader,
+.listItemDp1000Spent {
+  width: 200px;
+}
+
+.listItemDps,
+.dpsHeader {
+  width: 125px;
+}
+
+.listItemPe,
+.peHeader {
+  width: 75px;
+}
+
+.iconContainer {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: var(--primary-blue);
+  padding: 5px;
+  position: absolute;
+  left: -35px;
+  top: -2px;
+}
+
+.icon {
+  fill: #fff;
+}
+
+.link {
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+}

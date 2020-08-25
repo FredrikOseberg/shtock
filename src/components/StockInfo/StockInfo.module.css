@@ -1,0 +1,30 @@
+.stockInfo {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  width: 225px;
+}
+
+.outerContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.headerSpan {
+  font-size: 0.8rem;
+  font-weight: lighter;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.bids,
+.change {
+  color: var(--exchange-green);
+}
+
+.change {
+  font-size: 1.1rem;
+  font-weight: bold;
+  transform: translateY(10px);
+}

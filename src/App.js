@@ -1,42 +1,52 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Header from "./components/Header/Header";
-import Subheader from "./components/Subheader/Subheader";
-import ExchangeList from "./components/ExchangeList/ExchangeList";
-import TopFiveDividendStocksList from "./components/TopFiveDividendStocksList/TopFiveDividendStocksList";
-import InfoCard from "./components/InfoCard/InfoCard";
+import data from "./data";
 
-import { getTopFiveDividendStocks, getInfoCardData } from "./helpers";
-
-import data from "./data.js";
-
-import styles from "./App.module.css";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import StockView from "./pages/StockView/StockView";
 
 function App() {
+  const [exchanges, setExchanges] = useState([]);
+  const [stocks, setStocks] = useState([]);
+
+  const getData = () => {
+    const exchanges = data.exchanges;
+    const stocks = data.stocks;
+
+    return {
+      exchanges,
+      stocks,
+    };
+  };
+
+  useEffect(() => {
+    const { exchanges, stocks } = getData();
+
+    setExchanges(exchanges);
+    setStocks(stocks);
+  }, []);
+
   return (
     <div className="App">
-      <Header />
-      <Subheader>
-        <ExchangeList exchanges={data.exchanges} />
-        <TopFiveDividendStocksList
-          stocks={getTopFiveDividendStocks(data.stocks)}
+      <Router>
+        <Route
+          exact
+          path="/"
+          render={(props) => (
+            <Dashboard
+              exchanges={exchanges}
+              stocks={stocks}
+              setStocks={setStocks}
+              {...props}
+            />
+          )}
         />
-        <div className={styles.infoCardContainer}>
-          <InfoCard
-            title="Highest dividend yield in current year"
-            stock={getInfoCardData("yieldcurrent", data.stocks)}
-          />
-          <InfoCard
-            title="Highest dividend yield all time"
-            stock={getInfoCardData("yieldcompounded", data.stocks)}
-          />
-          <InfoCard
-            title="Highest dividend yield growth in past 3 years"
-            stock={getInfoCardData("growth", data.stocks)}
-            darkmode
-          />
-        </div>
-      </Subheader>
+        <Route
+          path="/stocks/:ticker"
+          render={(props) => <StockView {...props} stocks={stocks} />}
+        />
+      </Router>
     </div>
   );
 }

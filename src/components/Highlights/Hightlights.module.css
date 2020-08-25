@@ -1,0 +1,39 @@
+.highlights {
+  color: #fff;
+  max-width: 350px;
+}
+
+.header {
+  font-size: var(--h1-font-size);
+  font-weight: normal;
+}
+
+.container {
+  margin-top: 15px;
+}
+
+.hightlight {
+  display: flex;
+  align-items: center;
+  margin: 10px 10px 10px 0;
+}
+
+.iconContainer {
+  border-radius: 50%;
+  padding: 7px;
+  background-color: rgb(255 255 255);
+  margin-right: 10px;
+  box-sizing: border-box;
+  width: 30px;
+  display: flex;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  fill: var(--primary-blue);
+}
+
+.upsideDown {
+  transform: rotate(180deg);
+}

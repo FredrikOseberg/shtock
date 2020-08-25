@@ -61,8 +61,14 @@ textarea {
 :root {
   --header-gradient-top: #38a8c3;
   --header-gradient-bottom: #2a7fa0;
+  --primary-blue: #2a7fa0;
   --site-width: 1100px;
-  --exchange-green: #40d939;
+  --exchange-green: #30ff26;
   --infoCard-text-color: #2d88a8;
   --infoCard-dark-bg-color: #1b5265;
+  --dashboard-bg: #f1f1f1;
+  --box-border-radius: 5px;
+  --h1-font-size: 1.25rem;
+  --dark-grey: #585858;
+  --header-color: #1d1d1d;
 }

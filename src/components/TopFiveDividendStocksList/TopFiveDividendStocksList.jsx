@@ -7,7 +7,7 @@ const TopFiveDividendStocksList = (props) => {
     return props.stocks.map((stock) => {
       return (
         <li className={styles.listItem} key={stock.ticker}>
-          <div>{stock.name}</div>
+          <div>{stock.ticker}</div>
           <div>{stock.amount} NOK</div>
         </li>
       );
