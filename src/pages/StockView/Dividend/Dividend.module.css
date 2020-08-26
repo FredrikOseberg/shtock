@@ -1,0 +1,8 @@
+.dividend {
+  display: flex;
+}
+
+.container {
+  width: 100%;
+  margin-left: 2rem;
+}

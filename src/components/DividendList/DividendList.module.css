@@ -1,0 +1,90 @@
+.dividendListContainer {
+  width: 444px;
+  border-radius: var(--box-border-radius);
+  padding: var(--box-padding);
+  background-color: #fff;
+  color: var(--dark-grey);
+}
+
+.border {
+  margin: 25px 0;
+  width: 100%;
+  height: 3px;
+  background-color: #f1f1f1;
+  border-radius: var(--box-border-radius);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+}
+
+.header {
+  font-size: var(--h3-font-size);
+  color: var(--header-color);
+  font-weight: normal;
+}
+
+.dividendList {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-size: var(--paragraph-font-size);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.trendContainer {
+  display: flex;
+  align-items: center;
+  font-size: var(--paragraph-font-size);
+}
+
+.iconContainer {
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--dividend-green);
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.rankingContainer {
+  display: flex;
+  align-items: center;
+  font-size: var(--paragraph-font-size);
+  margin-top: 30px;
+}
+
+.ranking {
+  width: 90px;
+  height: 65px;
+  margin-left: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: var(--dividend-green);
+  color: rgb(255 255 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--box-border-radius);
+}
+
+.inverted {
+  transform: rotate(180deg);
+}

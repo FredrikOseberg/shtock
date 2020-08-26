@@ -1,0 +1,46 @@
+.calculator {
+  background-color: #fff;
+  padding: var(--box-padding);
+  border-radius: var(--box-border-radius);
+  width: 400px;
+  font-size: var(--paragraph-font-size);
+}
+
+.header {
+  font-size: var(--h3-font-size);
+  margin-bottom: 15px;
+  font-weight: normal;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.descriptor {
+  color: var(--header-color);
+  margin-bottom: 5px;
+}
+
+.ask,
+.shares {
+  color: var(--dark-grey);
+}
+
+.ask,
+.projectedDividend {
+  text-align: right;
+}
+
+.projectedDividend {
+  color: var(--dividend-green);
+  font-weight: bold;
+}
+
+.input {
+  padding: 5px;
+  border: none;
+  width: 100px;
+  border-bottom: 2px solid var(--primary-blue);
+}

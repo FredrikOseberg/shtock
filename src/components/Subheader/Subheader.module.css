@@ -4,6 +4,7 @@
     var(--header-gradient-top),
     var(--header-gradient-bottom)
   );
+  position: relative;
 }
 
 .container {

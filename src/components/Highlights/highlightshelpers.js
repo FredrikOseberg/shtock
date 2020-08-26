@@ -1,55 +1,28 @@
-import { getCurrentYear, sortStocksByDividendPayoutValue } from "../../helpers";
+import {
+  getCurrentYear,
+  sortStocksByDividendPayoutValue,
+  growingDividends,
+  consistentDividends,
+} from "../../helpers";
 
 export const determineGrowingDividends = (dividends) => {
-  const dividendKeys = Object.keys(dividends);
-  const comparisons = [];
+  const isGrowing = growingDividends(dividends);
 
-  const decliningGrowthHighlight = {
-    type: "decliningdividends",
-    text: "Declining dividend yields",
-  };
-
-  if (dividendKeys.length < 3) return [decliningGrowthHighlight];
-
-  dividendKeys
-    .reverse()
-    .slice(0, 3)
-    .forEach((key, index) => {
-      const firstItem = dividends[key];
-      const comparisonItem = dividends[dividendKeys[index + 1]];
-
-      if (index >= 3) {
-        return;
-      }
-
-      if (firstItem > comparisonItem) {
-        comparisons.push(true);
-      }
-    });
-
-  if (comparisons.length === 3) {
+  if (isGrowing) {
     return [{ type: "growingdividends", text: "Growing dividend yields" }];
-  } else {
-    return [decliningGrowthHighlight];
   }
+  return [
+    {
+      type: "decliningdividends",
+      text: "Declining dividend yields",
+    },
+  ];
 };
 
 export const determineConsistentDividends = (dividends) => {
-  const upperYearBoundry = getCurrentYear();
-  const lowerYearBoundry = upperYearBoundry - 20;
-  const treshold = 15;
+  const [isConsistent, results] = consistentDividends(dividends);
 
-  const results = new Set();
-
-  Object.keys(dividends)
-    .map((item) => +item)
-    .forEach((item) => {
-      if (item <= upperYearBoundry && item >= lowerYearBoundry) {
-        results.add(item);
-      }
-    });
-
-  if (results.size >= treshold) {
+  if (isConsistent) {
     return {
       type: "consistentdividends",
       text: `Has consistently paid out dividends in ${results.size} of 20 years.`,

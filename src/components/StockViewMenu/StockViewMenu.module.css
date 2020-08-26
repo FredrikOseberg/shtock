@@ -1,0 +1,40 @@
+.stockViewMenu {
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  display: flex;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  margin: 0 20px 0 0;
+  padding-bottom: 7px;
+}
+
+.icon {
+  width: 18.5px;
+  height: 18.5px;
+  fill: #fff;
+  margin-right: 5px;
+}
+
+.link {
+  text-decoration: none;
+  color: #fff;
+  padding: 5px;
+}
+
+.border {
+  width: 77px;
+  background-color: #fff;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  transform: translateX(15px);
+  transition: transform 0.4s ease;
+}
+
+.borderResearch {
+  transform: translateX(135px);
+}

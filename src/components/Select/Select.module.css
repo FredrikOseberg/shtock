@@ -6,9 +6,8 @@
   background: transparent;
   border: none;
   padding: 5px;
-  color: var(--header-color);
-  font-size: var(--h1-font-size);
-  width: 300px;
+  color: inherit;
+  font-size: inherit;
 }
 
 .icon {
@@ -16,8 +15,8 @@
   position: absolute;
   right: 0;
   top: 7px;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
 }
 
 select {

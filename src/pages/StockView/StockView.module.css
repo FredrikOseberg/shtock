@@ -1,0 +1,10 @@
+.content {
+  background-color: var(--dashboard-bg);
+  padding: 40px 20px;
+  min-height: 55vh;
+}
+
+.container {
+  max-width: var(--site-width);
+  margin: 0 auto;
+}

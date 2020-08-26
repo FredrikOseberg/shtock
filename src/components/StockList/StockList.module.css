@@ -1,6 +1,6 @@
 .container {
   background-color: #fff;
-  padding: 20px;
+  padding: var(--box-padding);
   border-radius: var(--box-border-radius);
 }
 
@@ -16,6 +16,10 @@
 .heading {
   font-size: var(--h1-font-size);
   font-weight: normal;
+}
+
+.select {
+  width: 240px;
 }
 
 .listHeaders,

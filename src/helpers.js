@@ -21,6 +21,10 @@ export const sortStocksByDividendPayoutValue = (stocks) => {
   return sortStocks(stocks, calculateDividendPayoutValue);
 };
 
+export const sortStocksByAggregatedDividend = (stocks, callback) => {
+  return sortStocks(stocks, callback);
+};
+
 const sortStocks = (stocks, sortingValueFunc) => {
   const stocksCopy = [...stocks];
 
@@ -62,6 +66,55 @@ export const calculateGrowth = (stock) => {
 
   const total = stock.dividends[year] - stock.dividends[comparisonYear];
   return total;
+};
+
+export const growingDividends = (dividends) => {
+  const dividendKeys = Object.keys(dividends);
+  const comparisons = [];
+
+  if (dividendKeys.length < 3) return false;
+
+  dividendKeys
+    .reverse()
+    .slice(0, 3)
+    .forEach((key, index) => {
+      const firstItem = dividends[key];
+      const comparisonItem = dividends[dividendKeys[index + 1]];
+
+      if (index >= 3) {
+        return;
+      }
+
+      if (firstItem > comparisonItem) {
+        comparisons.push(true);
+      }
+    });
+
+  if (comparisons.length === 3) {
+    return true;
+  }
+  return false;
+};
+
+export const consistentDividends = (dividends) => {
+  const upperYearBoundry = getCurrentYear();
+  const lowerYearBoundry = upperYearBoundry - 20;
+  const treshold = 15;
+
+  const results = new Set();
+
+  Object.keys(dividends)
+    .map((item) => +item)
+    .forEach((item) => {
+      if (item <= upperYearBoundry && item >= lowerYearBoundry) {
+        results.add(item);
+      }
+    });
+
+  if (results.size >= treshold) {
+    return [true, results];
+  }
+  return [false, results];
 };
 
 const calculateDividendPayoutValue = (stock) => {

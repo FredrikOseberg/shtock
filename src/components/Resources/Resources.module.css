@@ -1,0 +1,26 @@
+.resource {
+  color: #fff;
+  width: 200px;
+}
+
+.header {
+  font-size: var(--h1-font-size);
+  font-weight: normal;
+}
+
+.container {
+  display: flex;
+  margin: 10px 0;
+}
+
+.icon {
+  fill: #fff;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
