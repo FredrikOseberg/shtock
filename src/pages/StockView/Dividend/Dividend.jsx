@@ -25,11 +25,7 @@ const Dividend = ({ stock, ranking, stocks }) => {
           ask={stock.ask}
           currentYearDividend={currentYearDividend}
         />
-        <AggregatedDividend
-          dividends={stock.dividends}
-          stocks={stocks}
-          ticker={stock.ticker}
-        />
+        <AggregatedDividend stocks={stocks} stock={stock} />
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import { getCurrentYear, sortStocksByAggregatedDividend } from "../../helpers";
 
 import styles from "./AggregatedDividend.module.css";
 
-const AggregatedDividend = ({ dividends, stocks, ticker }) => {
+const AggregatedDividend = ({ stocks, stock }) => {
   const [years, setYears] = useState(20);
   const options = [
     { value: 20, displayValue: "20 years" },
@@ -30,17 +30,19 @@ const AggregatedDividend = ({ dividends, stocks, ticker }) => {
     const upperTreshold = getCurrentYear();
     const lowerTreshold = upperTreshold - years;
 
-    const keysWithinTresholdBoundries = Object.keys(dividends).filter((key) => {
-      const convertedToNumber = +key;
+    const keysWithinTresholdBoundries = Object.keys(stock.dividends).filter(
+      (key) => {
+        const convertedToNumber = +key;
 
-      if (
-        convertedToNumber <= upperTreshold &&
-        convertedToNumber >= lowerTreshold
-      ) {
-        return true;
+        if (
+          convertedToNumber <= upperTreshold &&
+          convertedToNumber >= lowerTreshold
+        ) {
+          return true;
+        }
+        return false;
       }
-      return false;
-    });
+    );
     return keysWithinTresholdBoundries;
   };
 
@@ -48,7 +50,9 @@ const AggregatedDividend = ({ dividends, stocks, ticker }) => {
     let total = 0;
 
     keys.forEach((key) => {
-      total += dividends[key];
+      if (dividends[key]) {
+        total += dividends[key];
+      }
     });
     return total;
   };
@@ -57,12 +61,6 @@ const AggregatedDividend = ({ dividends, stocks, ticker }) => {
     const validKeys = getValidKeys(dividends);
     const aggregatedDividends = calculateTotalDividends(validKeys, dividends);
     return (aggregatedDividends / validKeys.length).toFixed(2);
-  };
-
-  const getTotalDividends = (dividends) => {
-    const validKeys = getValidKeys(dividends);
-    const aggregatedDividend = calculateTotalDividends(validKeys, dividends);
-    return aggregatedDividend.toFixed(2);
   };
 
   const getTotalDividendPerStock = (stock) => {
@@ -87,7 +85,7 @@ const AggregatedDividend = ({ dividends, stocks, ticker }) => {
     return ranking;
   };
 
-  const ranking = getAggregateRanking(stocks, ticker);
+  const ranking = getAggregateRanking(stocks, stock.ticker);
 
   return (
     <section className={styles.aggregatedDividend}>
@@ -102,12 +100,12 @@ const AggregatedDividend = ({ dividends, stocks, ticker }) => {
 
       <div className={styles.container}>
         <p>Average past {years} years</p>
-        <p>{getAverage(dividends)} NOK</p>
+        <p>{getAverage(stock.dividends)} NOK</p>
       </div>
 
       <div className={styles.container}>
         <p>Total yield</p>
-        <p>{getTotalDividends(dividends)} NOK</p>
+        <p>{getTotalDividendPerStock(stock)} NOK</p>
       </div>
 
       <div className={styles.border} />
