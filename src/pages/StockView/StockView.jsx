@@ -10,10 +10,10 @@ import Highlights from "../../components/Highlights/Highlights";
 import Resources from "../../components/Resources/Resources";
 import StockViewMenu from "../../components/StockViewMenu/StockViewMenu";
 import Dividend from "./Dividend/Dividend";
+import Research from "./Research/Research";
+import Layout from "../../components/Layout/Layout";
 
 import { sortStocksByDividendYield } from "../../helpers";
-
-import styles from "./StockView.module.css";
 
 const initialObject = {
   name: "",
@@ -26,6 +26,7 @@ const initialObject = {
   homepage: "",
   investorpage: "",
   pe: 0,
+  research: [],
 };
 
 const StockView = ({ stocks }) => {
@@ -56,6 +57,13 @@ const StockView = ({ stocks }) => {
     return ranking;
   };
 
+  const setResearch = (researchObject) => {
+    setStock((prev) => ({
+      ...prev,
+      research: [...prev.research, researchObject],
+    }));
+  };
+
   return (
     <>
       <Header />
@@ -75,28 +83,28 @@ const StockView = ({ stocks }) => {
           }
         />
       </Subheader>
-      <div className={styles.content}>
-        <div className={styles.container}>
-          <Route
-            exact
-            path={match.url}
-            render={() => (
-              <Dividend
-                stock={stock}
-                ranking={getCurrentYearDividendYieldRating(stocks)}
-                stocks={stocks}
-              />
-            )}
-          />
-          <Route path={`${match.url}/research`} component={Research} />
-        </div>
-      </div>
+      <Layout>
+        <Route
+          exact
+          path={match.url}
+          render={() => (
+            <Dividend
+              stock={stock}
+              ranking={getCurrentYearDividendYieldRating(stocks)}
+              stocks={stocks}
+            />
+          )}
+        />
+
+        <Route
+          path={`${match.url}/research`}
+          render={() => (
+            <Research research={stock.research} setResearch={setResearch} />
+          )}
+        />
+      </Layout>
     </>
   );
-};
-
-const Research = () => {
-  return <div>Research</div>;
 };
 
 export default StockView;

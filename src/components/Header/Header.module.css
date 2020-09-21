@@ -4,6 +4,8 @@
   display: flex;
   justify-content: space-around;
   color: #fff;
+  height: 55px;
+  box-sizing: border-box;
 }
 
 .container {
@@ -17,6 +19,8 @@
 .logoContainer {
   display: flex;
   align-items: center;
+  color: inherit;
+  text-decoration: none;
 }
 
 .logo {

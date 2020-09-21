@@ -51,6 +51,16 @@ const data = {
       homepage: "https://google.com",
       investorpage: "https://google.com",
       pe: 15,
+      research: [
+        {
+          title: "First research",
+          description:
+            "This is the description. It is usually a lot longer than the title and contains information about the research that has been done",
+          link: "https://google.com",
+          author: { name: "Jake", authorId: "author123" },
+          id: 1,
+        },
+      ],
     },
     {
       name: "Aker",
@@ -70,6 +80,24 @@ const data = {
       homepage: "https://google.com",
       investorpage: "https://google.com",
       pe: 15,
+      research: [
+        {
+          title: "First research",
+          description:
+            "This is the description. It is usually a lot longer than the title and contains information about the research that has been done",
+          link: "https://google.com",
+          author: { name: "Jake", authorId: "author123" },
+          id: 1,
+        },
+        {
+          title: "Second research",
+          description:
+            "This is the description. It is usually a lot longer than the title and contains information about the research that has been done",
+          link: "https://google.com",
+          author: { name: "Jake", authorId: "author123" },
+          id: 2,
+        },
+      ],
     },
     {
       name: "Yara",
@@ -89,6 +117,16 @@ const data = {
       homepage: "https://google.com",
       investorpage: "https://google.com",
       pe: 15,
+      research: [
+        {
+          title: "First research",
+          description:
+            "This is the description. It is usually a lot longer than the title and contains information about the research that has been done",
+          link: "https://google.com",
+          author: { name: "Jake", authorId: "author123" },
+          id: 1,
+        },
+      ],
     },
     {
       name: "Leroy",
@@ -108,6 +146,16 @@ const data = {
       homepage: "https://google.com",
       investorpage: "https://google.com",
       pe: 15,
+      research: [
+        {
+          title: "First research",
+          description:
+            "This is the description. It is usually a lot longer than the title and contains information about the research that has been done",
+          link: "https://google.com",
+          author: { name: "Jake", authorId: "author123" },
+          id: 1,
+        },
+      ],
     },
     {
       name: "DNO ASA",
@@ -127,6 +175,16 @@ const data = {
       homepage: "https://google.com",
       investorpage: "https://google.com",
       pe: 15,
+      research: [
+        {
+          title: "First research",
+          description:
+            "This is the description. It is usually a lot longer than the title and contains information about the research that has been done",
+          link: "https://google.com",
+          author: { name: "Jake", authorId: "author123" },
+          id: 1,
+        },
+      ],
     },
   ],
 };

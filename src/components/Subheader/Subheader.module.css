@@ -5,6 +5,7 @@
     var(--header-gradient-bottom)
   );
   position: relative;
+  height: 280px;
 }
 
 .container {

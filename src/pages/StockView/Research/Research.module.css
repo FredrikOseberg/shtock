@@ -1,0 +1,79 @@
+.research {
+  display: flex;
+  box-sizing: border-box;
+}
+
+.cardContainer,
+.formContainer {
+  width: 50%;
+}
+
+.cardContainer {
+  margin-right: 1rem;
+}
+
+.formInnerContainer {
+  margin-left: 1rem;
+}
+
+.formInnerContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: var(--box-border-radius);
+}
+
+.header {
+  font-size: var(--h1-font-size);
+  margin-bottom: 2rem;
+}
+
+.inputContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.formLabel {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-right: 1rem;
+}
+
+.input {
+  margin-top: 0.5rem;
+  border: none;
+  padding: 5px;
+  border-bottom: 2px solid var(--primary-blue);
+}
+
+.textAreaContainer {
+  margin-top: 1rem;
+}
+
+.textarea {
+  border: none;
+  padding: 5px;
+  border-bottom: 2px solid var(--primary-blue);
+  height: 50px;
+}
+
+.buttonContainer {
+  width: 100%;
+}
+
+.addResearchButton {
+  border-radius: 3px;
+  display: block;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 2rem auto 1rem auto;
+  color: #fff;
+  background-color: var(--primary-blue);
+  text-align: center;
+  padding: 8px;
+  border: none;
+  width: 180px;
+  height: 40px;
+}
