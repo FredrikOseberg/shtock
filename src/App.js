@@ -10,21 +10,25 @@ function App() {
   const [exchanges, setExchanges] = useState([]);
   const [stocks, setStocks] = useState([]);
 
-  const getData = () => {
+  const getExchanges = () => {
     const exchanges = data.exchanges;
-    const stocks = data.stocks;
 
     return {
       exchanges,
-      stocks,
     };
   };
 
   useEffect(() => {
-    const { exchanges, stocks } = getData();
+    const { exchanges } = getExchanges();
+
+    const getData = async () => {
+      const response = await fetch("https://zfkkbotsag.execute-api.eu-central-1.amazonaws.com/dev/stocks")
+      const data = await response.json()
+      setStocks(data)
+    }
+    getData()
 
     setExchanges(exchanges);
-    setStocks(stocks);
   }, []);
 
   return (

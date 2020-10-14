@@ -9,8 +9,15 @@ import styles from "../StockList.module.css";
 
 const StockListItem = ({ stock }) => {
   const getDividendPerShare = (stock) => {
+    const keys = Object.keys(stock.dividends)
+    if (keys.length === 0) return 0;
+
     const year = getCurrentYear();
-    return stock.dividends[year];
+    const result = stock.dividends[year];
+
+    if (!result) return 0;
+
+    return result
   };
 
   const getDividendPer1000Spent = (stock) => {

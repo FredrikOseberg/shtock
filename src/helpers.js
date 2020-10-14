@@ -64,6 +64,7 @@ export const calculateGrowth = (stock) => {
   const year = getCurrentYear();
   const comparisonYear = year - 3;
 
+
   const total = stock.dividends[year] - stock.dividends[comparisonYear];
   return total;
 };
